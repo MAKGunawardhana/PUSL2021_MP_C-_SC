@@ -1,0 +1,33 @@
+﻿@model Expense_Tracker.Models.LogEntity
+
+@{
+    ViewData["PageTitle"] = Model.Id == 0 ? "Create User" : "Edit User";
+}
+
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="AddOrEdit">
+            <div class="mb-3">
+                <ejs-textbox id="firstName" placeholder="First Name" ejs-for="FirstName" floatLabelType="Always"></ejs-textbox>
+                <span asp-validation-for="FirstName" class="text-danger fs-6"></span>
+            </div>
+            <div class="mb-3">
+                <ejs-textbox id="lastName" placeholder="Last Name" ejs-for="LastName" floatLabelType="Always"></ejs-textbox>
+                <span asp-validation-for="LastName" class="text-danger fs-6"></span>
+            </div>
+            <div class="mb-3">
+                <ejs-textbox id="mobileNumber" placeholder="Mobile Number" ejs-for="Mobile" floatLabelType="Always"></ejs-textbox>
+                <span asp-validation-for="Mobile" class="text-danger fs-6"></span>
+            </div>
+            <div class="mb-3">
+                <ejs-textbox id="email" placeholder="Email" ejs-for="Email" floatLabelType="Always"></ejs-textbox>
+                <span asp-validation-for="Email" class="text-danger fs-6"></span>
+            </div>
+            <div class="mb-3">
+                <ejs-button id="submit" type="submit" content="Submit" cssClass="e-success"></ejs-button>
+            </div>
+        </form>
+    </div>
+</div>
+

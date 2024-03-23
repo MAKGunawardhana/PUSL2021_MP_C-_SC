@@ -1,0 +1,134 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["isDashboard"] = true;
+}
+
+@*Summary Widgets*@
+<div class="row mb-4">
+
+    <div class="col-md-4">
+        <div class="d-flex flex-row widget summary income">
+            <div class="d-flex flex-column justify-content-center p-5">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAYAAAA6/NlyAAAACXBIWXMAAAsTAAALEwEAmpwYAAAD/klEQVR4nO2aXYhVVRTHd9KHJkRvpZIRBEJfor6M6dy1z0VjwKEeaq91asQehCLRdz8eRpSsB9EI6qFeegp6SXpRNGfWOlPcTKYJIr/yowTB0AfHD5j8HNm3mfHe8Tgzd5+97z0j5w/r5XDYa/32Wvvsr6NUoUJetKT/g8e04DrNVNFMV0asAkwfAcOj6mFS+WD8DAj1a6HhVGM6bN9R00nAcQcI/vNAKGfDv6OE3lB5EwSBHauAMypvAqazoYBtZ6q8SQt+GQyY6QuVN5WE2sMBm+UqdxpWj9gPTIDsnrVtqzxKC34SIMM7VF5VEvOqb2DbZqu5ChUq9JAKmLb6n5bwU5XTOXhX0JXWcPcMlRdpod2hYGtst8qDtNCWJsCO2ubWwia0VjPdaRqw9ZXQ2pbAlsQsBaH/mpjdEWi8YTcqTYUFNs+C0Lmmw96z8+WDZl7zDuOYKq7Bjm8vQ3lXbCy5n2uVL+CqYXdQ2HJf/BowXc8PMN0sJ7g4YCnjgGtwIHgImNbfD4zrtNAv7qWNA0FKWzvPtzgEbN6dtP0EP7TvOoJv8Qq74ud4LghecwkmElwzvr2OvR1PtFXMrPHPIzHoWD3X2pOuOd6AtdDXToEwHak9jwLGV+rKl3EgSuj1Wl+29B2z/JUX2BU/mfl2sncM4vO6jkufzi519nc+ea9zsdtxLN9oT+i5zMDA+JnzB0Voe31b9Gt6SdI5YDxtTQtebNkGY+X+1bOrt3yOAQDTN/XA5kVg/CHYkpTpio3ZGTgSXJMxgAtpAdhnJcEImDZqoR8zDJkpfSSnLM14wEMQ3052/wv81tPAuAGEBrNnGQ8oF63cv3q2r9KzYzeS+E3g92dO5DPqiV/OCm1jdiprYOr0PcaA8bIW2gOMm6IES+ZP83iQA4XeeFXDwFpwm2/gtA6w47jWr10bZ28btzkA057s44n+sL86VG2i++NeXDbqN+p57/nsfvF7lwwfy+q4JPGi0fbsHREI3UrJ8u2oxywYfQ8Y2zwAH20YGAT/9VCym+o6sTdeBUy/jYEz/gWMcYChdN4lw0MextLFtKMYu51L3Tz8X86XPPgdcgCmqx56ulpe5T7z0mT+oh5cCIKnvPgUuuoCfNKT8+rC3n5IdIJd94GKQWD6zp5eePMndLJxYMY+jwGMWUrHevdhY3fJ8I7pCgyMHzsdtOvpC9zWMLAa7p4BQseDlFxAszE73zQCx++0GqBh68W3nWBr7n33tRxiyob7Mv/T1XGo6yl7GJf7UmY8YffVytcxrWY63GqoCex3e9iofKqtYmYB086sVy1+s0rXbUxpy1Rvak/MC/ZCbWQTMNh0SKHBqm+mrTaWYKCFChUqVEg1X3cB/d++9OP0E2EAAAAASUVORK5CYII=">
+            </div>
+            <div class="d-flex flex-column m-auto py-3">
+                <span class="lead">Total Income</span>
+                <h1 class="display-6 fw-bold">@ViewBag.TotalIncome</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="d-flex flex-row widget summary expense">
+            <div class="d-flex flex-column justify-content-center p-5">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAYAAAA6/NlyAAAACXBIWXMAAAsTAAALEwEAmpwYAAAD40lEQVR4nO2aT4hVVRzHj5KlBdGuMiqCQKimyFX/xU08cJz7vt/TkSLRRTCh1F5z8cTIWoRGUIvauArcKK0E3bmYStQgyOy/glDkQiudeb/zqhPHeU53Zu407517znt35H7ht3k8zu/3ub/fueec37lK1aoVRW58fIUFtgs5IeQfXZuw5Da3bt1N6kaS27jxTkuetKQrMiFP+P+opaQO0LDAuYWgStjPHa2fV1WTTQM7bcBPqmqywPmEwOdU1STAh6mAhfxAVU1W62eTZbjZfEZVTU6pZf4Fk6Ccz/uxVRUlwNvRyxnYq6oqybKR6MBZNjJsrlq1at2gEmB3gk3HO6pqckotE3Jfyp2Wa7WWq6pIyP3Jdln/Qe9XVZAld6WGnTHgjaHCCvmKkP8MCtj78j6HAmubzSeFbA8su9ehAesPKgOFdcbcZYELg4bNQf9y1Zh7BgM7Pr6i23wLCnbueCXKe8LHUvm1VkUC7lorLazWjwogVQEWsiPA2pR95dMl5t3nlnxtHvB0r/qzYHDgdJLStoHrrQBTovVLi44PvOr/Gwi+Kyrs1bGx1QJcCQTeMnc812jc4oxZNfd30XpToI8rDrg7GrAlPw4st6/z/SgBHplVvn6KaP3ULOjp0g/J8kdRYCeNue/aYh/2Unl/FkzBcibkJTc6emvu4bYCs2wns+ze0sACvBf6QhHgzTnAXyxQCRcs8KM3IS8O7YDhNm++zd/yhQZggQP58aaMedCSn6bakvpYfczBwAJsKRUA8FtRAP63DrnekjsEOBY6ZXp9SfYsIY+WDgL4ZLH7X5dld1jgdQEuR8jy0d4J55dzlNLzc7cNjLmtW1eq/5Fo/XBZaB9zUFl3ms3R6HMM+N0Chy2505LPOWNuTtFQ6AAb+gYWck9s4MIHQO6Y5RdYG6Gi9vQNbKczURbqq+6nDicXuT9++rrfSfL+CH4PhQB/U/pJa/34TOaybESAvwqy/HfbmDU5v09EAD7TN7CQv0ZwvDM/pp9bljw1Aw58J8CLsaeS74j0D4zgk0t+Ll0sasX441zR4cGXs99qRgCeCgH+M0KGr5VX25iHevD3mCV/iOHTx943sAW+j9ppJA8J8HLhkRA46LsXsfz52PsGFuB4tAByNu/BJvDhYw8B3rtkgcm3ghrtdokC+6Wtb2DXai23wNkkAaU04GzwTWMbeGHoAH1am9RBsLl73yPDhujVfKylv+lyjcbtvhk3bJge7Ft/rlbR2rTkiQpALWRf+majiilnzCoB3i171RK1hAHxMRVtU6NpypgHuhdqp2K0ZAIgL3d97/axJAOtVatWrVpq8PoXKxGMzCEELzEAAAAASUVORK5CYII=">
+            </div>
+            <div class="d-flex flex-column m-auto py-3">
+                <span class="lead">Total Expense</span>
+                <h1 class="display-6 fw-bold">@ViewBag.TotalExpense</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="d-flex flex-row widget summary balance">
+            <div class="d-flex flex-column justify-content-center p-5">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAYAAAA6/NlyAAAACXBIWXMAAAsTAAALEwEAmpwYAAAECklEQVR4nO2aTWxVRRTHB+IHYGLc1SL0vZn7jEkVCbhRUYwbQ1LjBkMgJN24MBLYW1k8AhH7znmvLSaYKBtXJGzasGpSdy5q22BJjGBp1X7dc+7jIxGBhC/1kml99b1ya3vnzn3vtrn/5GxuJnPOb+6ZmTtnrhCpUlnRa1/7T0rkQxJ5UCLdmjceVMCfvJP3nxBrSbKn3CSBLyhkP9CARnQbsZrkAO9RQFNLQhkbTWaB3hNJk4oFdiEDfhdJk0KejhF4SiRNCumrGIFPi6RJFujt2ICL9JZInHx/nV5gYgCe1n2LJEohf2E/nfmkSKpUqbzNOnCpvK3RXKlSpVqjkkjHbC9aErhTJHIPBuqK9Usr768XSZFE7o4NtvKmkbtFEiSBj8YNuwBdoM8aC4v0kQL6p17A2pf22RBYB9w3JPC9usEuLGL0QB9U6gqbgavPS2C33rD/GXkvlmZeqGcxbtA02MX9Gb9p5EEdS+L3WmEJeH5Ocz5eWJh9VSLfTwqwRHroFGhnfKkMPGr+NmhIIh1+bBCRDymgH4yhgUdjSW1pvt/eVUU6sFz/CvjjubZm0Eetwm4tTG9WQHdMgnGA2xf3lzs1/vSW0szGxc+z6O0zzJ47LV3Xmq0BK+AzZiNPl6rrUQq9V6rTV6ejU3TfrPVFQ4aZ9I0d2E5q0Zu92aLCX1b3FbidAf/RnKdNVYObNxzcB07R3RoZWAL3mC8odKJm8JCGl5iDrgT6bd74esMOGE3oPaNv+SIAf1vdn1OaySng83F9kupYdczGwA5we8QArgUFoJ85Be9dBfSpQv7OdMqsdJFcsRTwQORRBz673P1vpnvyOQfoiEK6GRkaeEAYpzPYSj0azhbdDzL5yQ3/59Pp9F6OCq1jNkprWfDetz7HgP6UwH0SqSOLvLs1//NT8RQUvLbwwEjHbQMHDYCexzVvuUA7I/eLdDw8MHBf9PlEP+lfHf793WHp+2OgXRW/WeRMdGDuDQ2sgH+J6jhXdHfU3DsB/fV4O/o7W3BfqrTLlMqvR88eumwATGULqdVR0yd6bRL5xwq4RB5X6O63P5XICw+MZieXGmDg60GlGH2cCz48cEZ/akYH5ruhgSXQbQuO59Irh9y6nL9saXa7RPrVhk8duwEwT1itNCL3yiIdDDwSAp3T1Qt7/ngiNLBC/t5WANUW4Me6Dx17eGDgk6sWGPhzo0K7WqXAemsLDSzy/nqFPBZTysVpY8Y3jRL5wwQAhDIJvFcYy/fXSaT+VQOL1B/5n67cqRvP6mJco2GWNeAr+lwtLJZpRxoOtbRd1MVGYVNbSjMbFVAx6lWL3RTm+zqmoM9Ua2pBT+oLtblDgI2STGijm9q3jkHHEhtoqlSpUqUS9dcjF2ZJqllmCzQAAAAASUVORK5CYII=">
+            </div>
+            <div class="d-flex flex-column m-auto py-3">
+                <span class="lead">Balance</span>
+                <h1 class="display-6 fw-bold">@ViewBag.Balance</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+@*Doughnut and Spline Chart*@
+<div class="row mb-4">
+    <div class="col-md-4">
+        <div class="widget chart">
+            <div class="p-4">
+                <h5 class="fw-bold">Expense By Category</h5>
+            </div>
+            <ejs-accumulationchart id="doughnutchart" enableSmartLabels background="#1a222b">
+                <e-accumulation-series-collection>
+                    <e-accumulation-series dataSource="@ViewBag.DoughnutChartData"
+                                           xName="categoryTitleWithIcon" yName="amount"
+                                           innerRadius="60%" legendShape="Circle"
+                                           palettes=@(new string[]{"#0e8d76","#a4b219","#cb9b00","#8a442c","#0454b5","#7d0a0a","#822690","#4c2090","#313e93","#0096ac"})>
+                        <e-accumulationseries-datalabel name="formattedAmount" visible></e-accumulationseries-datalabel>
+                    </e-accumulation-series>
+                </e-accumulation-series-collection>
+                <e-accumulationchart-legendsettings position="Top" toggleVisibility="false">
+                    <e-legendsettings-textstyle color="#fff" size="1rem"></e-legendsettings-textstyle>
+                </e-accumulationchart-legendsettings>
+                <e-accumulationchart-tooltipsettings enable></e-accumulationchart-tooltipsettings>
+            </ejs-accumulationchart>
+        </div>
+    </div>
+    <div class="col-md-8">
+        <div class="widget chart">
+            <div class="p-4">
+                <h5 class="fw-bold">Income vs Expense</h5>
+            </div>
+            <ejs-chart id="spline-chart" background="#1a222b"
+                       palettes=@(new string[]{"#54ffa9","#ffe91a"})>
+                <e-chart-primaryxaxis valueType="Category">
+                    <e-majorgridlines width="0"></e-majorgridlines>
+                    <e-majorticklines width="0"></e-majorticklines>
+                </e-chart-primaryxaxis>
+                <e-chart-primaryyaxis>
+                    <e-majorgridlines width="1" color="#32414d" dashArray="3,5"></e-majorgridlines>
+                    <e-majorticklines width="0"></e-majorticklines>
+                    <e-linestyle width="0"></e-linestyle>
+                </e-chart-primaryyaxis>
+                <e-chart-chartarea>
+                    <e-chartarea-border width="0"></e-chartarea-border>
+                </e-chart-chartarea>
+                <e-series-collection>
+                    <e-series dataSource="@ViewBag.SplineChartData" xName="day" width="3"
+                              yName="income" name="Income" type="@Syncfusion.EJ2.Charts.ChartSeriesType.Spline"></e-series>
+                    <e-series dataSource="@ViewBag.SplineChartData" xName="day" width="3"
+                              yName="expense" name="Expense" type="@Syncfusion.EJ2.Charts.ChartSeriesType.Spline"></e-series>
+                </e-series-collection>
+                <e-chart-legendsettings position="Top" alignment="Far" toggleVisibility="false">
+                    <e-legendsettings-textstyle color="#fff" size="1rem"></e-legendsettings-textstyle>
+                </e-chart-legendsettings>
+                <e-chart-tooltipsettings enable shared></e-chart-tooltipsettings>
+            </ejs-chart>
+        </div>
+    </div>
+</div>
+
+@*Recent Transactions and More*@
+<div class="row">
+    <div class="col-md-6">
+        <div class="widget">
+            <div class="p-4">
+                <h5 class="fw-bold">Recent Transactions</h5>
+            </div>
+            <div class="px-4 pb-4">
+                <ejs-grid id="recent-transactions"
+                          dataSource="@ViewBag.RecentTransactions" gridLines="None">
+                    <e-grid-columns>
+                        <e-grid-column headerText="Category" field="CategoryTitleWithIcon"></e-grid-column>
+                        <e-grid-column headerText="Date" field="Date" type="date" format="MMM-dd-yy"></e-grid-column>
+                        <e-grid-column headerText="Amount" field="FormattedAmount" textAlign="Right"></e-grid-column>
+                    </e-grid-columns>
+                </ejs-grid>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="widget h-100">
+            <div class="d-flex justify-content-center align-items-center h-100">
+                <a>
+                    <span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAACXBIWXMAAAsTAAALEwEAmpwYAAACSklEQVR4nO2dS24UQRAFn4zs4wEWYB8JsDgFGLgRf/sOFl6TqFF78zaWmGq/rHaElPvKiJme6VVJAAAAAAAAc3Ai6VzSJ0nfJN1Kqkc+t6uLxcnZ6uhBeCHpqoGAaj6/JJ1uGeKJpHcNFq3J5kLS0RZBiKH/jvJ2i8dU+pNWk8/zUTFO1udheqGafK5H/dCfN1imdjKvRgT53GCR2slcjgjyo8EitZNZ3lMO5neDRWons7g8mPQStbMhiPIRCKK8eIIoL5sgygsmiPJSCaK8SIIoL48gOvyZPNt5d/di6KTPQxAjLZwgRlo4QYy0cIIYaeEEMdLCCWKkhRPESAsniJEWThAjLZwgRlo4QYy0cIIYaeEEMdLCCWKkhRPESAsniJEWThAjLZwgRlo4QYy0cIIYaeHTBJmd6uKhzUHCtPHQ5iBh2nhoc5AwbTxU83HS5yGIkRZOECMtnCBGWjhBjLRwghhp4QQx0sIJYqSFE8RICyeIkRZOECMtnCBGWjhBjLRwghhp4QQx0sIJYqSFE8RICyeIkRZOECMtnCBGWjhBjLRwghhp4Y8+SDWQTBDlxRJEeZkEUV4gQZSXRpAGooogeTlFkLyQmj0IF7poWIybEUG+N/hU1U7m64ggHxssUjuZ9yOCnDVYpHYyL0cEOZb0s8EyNflcjbxB+rTBQjXx/JH0VIO5aLBYTTqvtQFH663H6eVqsm/Gm62u775jufWY3xTdG2O5IfWZHojj9aLdy/W/NS+P+ufgi6QP67+pxREAAAAAAIC68xcNE6/i/muRWQAAAABJRU5ErkJggg=="> Widget</span>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</div>

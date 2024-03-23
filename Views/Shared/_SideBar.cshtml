@@ -1,0 +1,76 @@
+﻿﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    List<Object> menuItems = new List<Object>();
+
+    menuItems.Add(new
+    {
+        text = "General",
+        separator = true,
+    });
+    menuItems.Add(new
+    {
+        text = "Dashboard",
+        url = "/",
+        
+    });
+    menuItems.Add(new
+    {
+        text = "Categories",
+        url = "/Category",
+        
+    });
+    menuItems.Add(new
+    {
+        text = "Transactions",
+        
+        url = "/Transaction"
+    });
+
+    menuItems.Add(new
+    {
+        text = "Extras",
+        separator = true,
+    });
+    menuItems.Add(new
+    {
+        text = "User Details",
+        
+        url = "/Log"
+    });
+}
+
+
+<ejs-sidebar id="sidebar" width="290px" enableDock dockSize="100px"
+             target=".dock-target" enableGestures="false">
+    <e-content-template>
+
+        
+
+        <div class="logo-wrapper">
+            <div class="app-logo">
+                <img src="~/logo1.png" />
+            </div>
+            <div class="w-100"></div>
+            <img id="sidebar-toggler" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA/UlEQVR4nNWTOwoCQRBEN1EPoKfwcwQNzPRMXkFRFD2MnzMoarKRycJStROsn0wZad3Az8zsCiLY0DBB85jq6vK8v60wDGskBwA2JI/SybuvlKpmBvm+XwAwBnAhqU0N4AxgpLXOZ4EtbCADeO6EApg4ACsAHQN0aN2ZQ+YyjuMigLZJvlKq8gYUA2ywIAhKABokD5aZnknu1vYzkk2SJ8cu1ybg/mVolwXG++z+J8DtVyWT7KeYUneY0n0DSpzkBFLOpmU6myiKysZblDh9etgkB56tJEYAZh9Eb6q1zlmBD9ChQ/5NpvwsFeY977QiCRAHEzMOybtr3dlf1BUBwSC9M6zvSwAAAABJRU5ErkJggg==">
+        </div>
+
+        
+
+        <ejs-menu id="menu"
+                  items="menuItems"
+                  orientation="Vertical"
+                  hamburgerMode></ejs-menu>
+    </e-content-template>
+</ejs-sidebar>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        dockBar = document.getElementById('sidebar').ej2_instances[0];
+        document.getElementById('sidebar-toggler').onclick = function () {
+            dockBar.toggle();
+        };
+    });
+
+</script>

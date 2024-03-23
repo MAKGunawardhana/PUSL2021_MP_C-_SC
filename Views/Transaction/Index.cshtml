@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Expense_Tracker.Models.Transaction>
+
+@{
+    ViewData["PageTitle"] = "Transactions";
+    ViewData["PageActionText"] = "New Transaction";
+    ViewData["PageActionUrl"] = "/Transaction/AddOrEdit";
+}
+
+
+<div class="row">
+    <div class="col-md-7">
+        <ejs-grid id="categories" dataSource="@Model" gridLines="None"
+                  allowSorting="true" allowPaging="true">
+            <e-grid-pagesettings pageSize="5"></e-grid-pagesettings>
+            <e-grid-columns>
+                <e-grid-column headerText="Category" field="CategoryTitleWithIcon"></e-grid-column>
+                <e-grid-column headerText="Date" field="Date" width="110px"
+                  type="date" format="MMM-dd-yy"></e-grid-column>
+                <e-grid-column headerText="Amount" field="FormattedAmount" width="110px"></e-grid-column>
+                <e-grid-column headerText="Actions" template="#actionColumnTemplate" width="100px"></e-grid-column>
+            </e-grid-columns>
+        </ejs-grid>
+    </div>
+    
+</div>
+
+<script id="actionColumnTemplate" type="text/x-template">
+    <div class="d-flex flex-row justify-content-start">
+        <a class="btn btn-sm no-a-decoration" href="/Transaction/AddOrEdit/${TransactionId}">
+          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAABC0lEQVR4nM3UvS4EURjG8Z9IUAiuAIUofWytkVAoxA1QuQjFKhGJaCVaiYsgOnEHbIQKhWh9tStHziaTk9k9u2MLT/JkMufjP2/e581QTbP6qGm8o94P2AAu0Iyu/xW4UYC1vFMVNo4azqtCJzCFVRzhDZ9Y7hW6VHK46HbQj3bp72aAwV9YwVl8v8ZMuwqvugC2Kq3FoEL6pRrBd3LxAZu4SdZfMZYLYq2kkr24t52sH+pCJ8mlO8zhGC/JXuhhR4U+PCew+fgs6+FkZ5zfBrcONzKw4NEc8CCBNTIpD+aAjxlYGJPL+EMIw99Ri7jHAm4LkCecYh3DetBWhIXKwtztx49U1lAB+r/0A+sYiE9kqtAgAAAAAElFTkSuQmCC">
+           </a>
+           <form action="/Transaction/Delete/${TransactionId}" method="post">
+    @Html.AntiForgeryToken()
+               <button type="submit" class="btn btn-sm btn-link no-a-decoration"
+               onclick="return confirm(&quot;Are sure autofocus delete this record?&quot;)">
+                   <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAwElEQVR4nOWUQQrCMBREH+IFvIAeoQE3ouJxeic34sYDCAWX3fcAHqJIuqm7QiXwhRBjsF9BwYGB5Ccz/ElCII0xkAFzYSY1NfbAAdgK3Xj3qngEGK8bx3Mwj9WMaB8wAUqgH8hStFHkCsM8FfvPDWtgA1ivZqVWazs8AQvgAjTAGji+G7kAlsLiE2do5fGaIL7KsPFi+vFVhm0k5j1+qzG8AlUkYiVr33+H/U8aroBugJnb6y4piVnkU33Gaai+AaOvyl///gJRAAAAAElFTkSuQmCC">
+                </button>
+            </form>
+    </div>
+</script>
